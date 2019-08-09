@@ -4,7 +4,7 @@ behavior profiling for customer participation in Electricity Markets.
 
 
 
-#Stepwise Regression:
+**Stepwise Regression:**  
 
 Through these codes, we have been able to identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables.
 
@@ -22,7 +22,7 @@ The description of the code files are:
 For the stepwise regression, the codes incorporated here works on Julia, and utilizes packages of DataFrames, CSV, StatsBase, DIstributions and GLM.  
 
 
-#Lasso Regression:
+**Lasso Regression:**  
 
 Through these codes, we have been able to identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables.
 Teh description of the code files are:  
@@ -32,6 +32,6 @@ Teh description of the code files are:
 For the Lasso regression, the codes incorporated here works on Julia, and utilizes package of RCall that is used to call R functions to Julia.  
   While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
 
-#About the Paper:
+**About the Paper:**  
 These codes are developed as a part of the Paper "Customer Energy Profiling using Julia Lang with Big Data", which is submitted to XXX Journal.  
 Please go through the paper for more clarity. We request users to cite the paper as well as get back to us if you find any incompatibilities within the codes.
