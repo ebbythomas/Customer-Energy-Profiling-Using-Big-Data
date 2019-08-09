@@ -9,7 +9,7 @@ behavior profiling for customer participation in Electricity Markets.
 Through these codes, we have been able to identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables.
 
 The description of the code files are:  
-**loadForecasting.jl:**   The main Julia file   
+**loadForecasting.jl:**   The main Julia file. The user may run just this file.   
 **categoricalArrays.jl:** The file where Categorical columns are identified and set different from that of teh numerical columns  
 **contextualAggregation.jl:** The file in which contextual aggregation is done (with normalisation as required). This part can seldom be automated in a standard data processing procedure.  
 **formula.jl:**           The file where the formula update is done for every successive iteration of the Julia Regression model.   
