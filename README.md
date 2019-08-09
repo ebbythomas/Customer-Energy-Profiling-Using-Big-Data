@@ -2,6 +2,8 @@
 A comprehensive guide to deal with big data encountered in power systems, as well as to an initiative in facilitating customer
 behavior profiling for customer participation in Electricity Markets.  
 To perform the data processing, run the loadForecasting.jl file, within which, we have other files and funcitons that are run.  
+
+
 **loadForecasting.jl:**   The main Julia file   
 **categoricalArrays.jl:** The file where Categorical columns are identified and set different from that of teh numerical columns  
 **contextualAggregation.jl:** The file in which contextual aggregation is done (with normalisation as required). This part can seldom be automated in a standard data processing procedure.  
