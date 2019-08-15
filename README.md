@@ -1,4 +1,4 @@
-## Customer-Energy-Profiling-Using-Big-Data##
+## Customer-Energy-Profiling-Using-Big-Data
 
 A comprehensive guide in Julia to deal with big data encountered in power systems, as well as to an initiative in facilitating customer
 behavior profiling for customer participation in Electricity Markets.  
