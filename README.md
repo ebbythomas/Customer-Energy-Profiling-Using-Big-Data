@@ -42,7 +42,7 @@ The files within the Data_Files are,
 **validSet.csv**: This is the validation dataset that is obtained after the data processing stages. It is this dataset that is fed to validate the model in both stepwise regression as well as Lasso.  
 **testSet.csv**: This is the test dataset that is obtained after the data processing stages. It is this dataset that is fed to test the model accuracy in both stepwise regression as well as Lasso.
 
-**INSTRUCTIONS:**  
+**INSTRUCTIONS FOR USE:**  
 
 **Data Processing**  
 1. Feed in the raw data, recs2009_public.csv  
