@@ -6,6 +6,7 @@ Though specifically aimed at customer energy profiling, this work addresses the 
 
 
 **DATA PROCESSING:**  
+The files associated with data processing is found within the folder 'Data_Processing'.  
 In data processing, we start with a 12083 X 940 raw data, where most of the variables are omitted through manual variable selection.  
 The selected data is processed with a series of statistcial procedures such as  
 Contextual Aggregation  
@@ -21,16 +22,25 @@ Missing value imputation - **imputation.jl**
 The resulting datasets - train set, validation set and test set are carried on to the two methods of modeling and model selection - Stepwise regression and Lasso.  
 
 **STEPWISE REGRESSION:**  
+The files associated with stepwise regressoon is found within the folder 'Stepwise_Regression'.  
 Here, we identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables though Stepwise Regression, one of the classic methods of statistics for model selection.  
 To obtain the associations between variables, we perform Fishers Exact Test - realised here as a stand alone function **fishersTest.jl**.  
 The stepwiseRegression fits the model, as well as predict the observations based on a specific validation set based on the fit model.
 
 
 **LASSO REGRESSION:**  
+The files associated with stepwise regressoon is found within the folder 'Lasso_Regression'.  
 Here as well, we identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables, but though Lasso, one of the recent developments in statistics for model selection.  
 To obtain the associations between variables including teh categorical variables, we utilse the package **Group Lasso** within Lasso.  
 The lassoRegression fits the model, as well as predict the observations based on a specific validation set based on the fit model.
 
+**DATA FILES:**  
+All the data files used in this data processing, modeling and model selection process are found within the folder 'Data_Files'.  
+The files within the Data_Files are,  
+**recs2009_public**: This is the compressed raw file from the Residential Energy Consumption Survey, that gives information about the customer energy usage. The Data is published by Energy Information Administration (EIA), a governmental body of the United States of America. The survey has 12083 respondents with 940 variables (588 excluding imputation flag). It is this file that is fed at the start of data processing stages.  
+**trainSet.csv**: This is the train dataset that is obtained after the data processing stages. It is this dataset that is fed to train the model in both stepwise regression as well as Lasso.  
+**validSet.csv**: This is the validation dataset that is obtained after the data processing stages. It is this dataset that is fed to validate the model in both stepwise regression as well as Lasso.  
+**testSet.csv**: This is the test dataset that is obtained after the data processing stages. It is this dataset that is fed to test the model accuracy in both stepwise regression as well as Lasso.
 
 **INSTRUCTIONS:**  
 
