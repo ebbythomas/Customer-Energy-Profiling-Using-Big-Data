@@ -8,7 +8,7 @@ Though specifically aimed at customer energy profiling, this work addresses the 
 **DATA PROCESSING:**  
 The files associated with data processing is found within the folder 'Data_Processing'.  
 In data processing, we start with a 12083 X 940 raw data, where most of the variables are omitted through manual variable selection.  
-The selected data is processed with a series of statistcial procedures such as  
+The selected data is processed with a series of statistical procedures such as  
 Contextual Aggregation  
 Categorical Arrays definition  
 Randomisation and  
