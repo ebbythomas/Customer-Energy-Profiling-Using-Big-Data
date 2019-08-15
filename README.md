@@ -14,9 +14,9 @@ Randomisation and
 Missing value imputation  
 All these procedures are performed in separate files so that users could use them as required and omit certain steps if necessary.  
 The one single file **dataprocessing.jl** calls all its sub files which does,  
-Contextual Aggregation - **contextualAggregation.jl**
-Categorical Arrays definition - **categoricalArrays.jl**
-Randomisation - **randomisation.jl**
+Contextual Aggregation - **contextualAggregation.jl**  
+Categorical Arrays definition - **categoricalArrays.jl**  
+Randomisation - **randomisation.jl**  
 Missing value imputation - **imputation.jl**  
 The resulting datasets - train set, validation set and test set are carried on to the two methods of modeling and model selection - Stepwise regression and Lasso.  
 
