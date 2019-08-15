@@ -48,6 +48,7 @@ The files within the Data_Files are,
 1. Feed in the raw data, recs2009_public.csv  
 2. Run the file **dataProcessing.jl**. This will call other files on to it.  
 3. At the end of data processing, we will get three files - train set, (**trainSet.csv**) validation set (**validSet.csv**) and test set (**testSet.csv**)  
+4. Note that this code block has been designed so that it is appropriate for use in a general use case. However, contextual aggregation performed in 'contextualAggregation.jl' file is specifically suited for the specific dataset as well as the application. This code block, henceforth will vary widely depending on the dataset encountered as well as the application.  
 
  **Stepwise Regression**  
  1. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
