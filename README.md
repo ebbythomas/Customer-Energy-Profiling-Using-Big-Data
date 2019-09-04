@@ -6,7 +6,7 @@ Due to the ever increasing data availablility and higher requirement for computi
 This project specifically aims to wring out the best 'n' variables that would contribute to teh customer energy consumption. The energy operators/retailers, upon gathering these 'n' variables through survey systems as well as smart metering, can predict the energy consumption of a particular customer. Though this project is specifically aimed at customer energy profiling, the same can be used in various other applciations as discussed with minimal modifications in the code.  
 
 
-**DATA PROCESSING:**  
+**DataProcessing:**  
 The files associated with data processing is found within the folder 'Data_Processing'.  
 In data processing, we start with a 12083 X 940 raw data, where most of the variables are omitted through manual variable selection.  
 The selected data is processed with a series of statistical procedures such as  
@@ -35,7 +35,7 @@ Here as well, we identify the best 'n' variables that contribute to the customer
 To obtain the associations between variables including teh categorical variables, we utilse the package **Group Lasso** within Lasso.  
 The lassoRegression fits the model, as well as predict the observations based on a specific validation set based on the fit model.
 
-**DATA FILES:**  
+**DataFiles:**  
 All the data files used in this data processing, modeling and model selection process are found within the folder 'Data_Files'.  
 The files within the Data_Files are,  
 **recs2009_public**: This is the compressed raw file from the Residential Energy Consumption Survey, that gives information about the customer energy usage. The Data is published by Energy Information Administration (EIA), a governmental body of the United States of America. The survey has 12083 respondents with 940 variables (588 excluding imputation flag). It is this file that is fed at the start of data processing stages.  
