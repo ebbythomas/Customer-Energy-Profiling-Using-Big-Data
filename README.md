@@ -3,7 +3,7 @@
 A comprehensive guide for Power System Engineers to handle big/large datasets available to them so that these datasets provide better interpretability in applications such as demand management, asset management, ancillary services management, electricity market operations as well as with views to increase customer participation in electricity tariffing. Currently, there is a phenomenal amount of data available, however, the tools to convert such data into invaluable insights is lacking in the domain.  
 
 The aim of this project is to improve the utilisation of data in power engineering scenario through data analytic methods. Here, statistical data processing techniques are discussed in a non-programmer perspective.  
-Due to the ever increasing data availablility and higher requirement for computing speed, we rely on a relatively new tecnical computing language '[Julia](https://julialang.org/)', which has superior performance over the conventional environments.  
+Due to the ever increasing data availablility and higher requirement for computing speed, we rely on a relatively new tecnical computing language [Julia](https://julialang.org/), which has superior performance over the conventional environments.  
 
 This project specifically aims to wring out the best 'n' variables that would contribute to the customer energy consumption. The energy operators/retailers, upon gathering these 'n' variables through survey systems as well as smart metering, can predict the energy consumption of a particular customer. Though this project is specifically aimed at customer energy profiling, the same can be used in various other applciations as discussed with minimal modifications to the code.  
 
@@ -21,7 +21,7 @@ The selected data is processed with a series of statistical procedures such as:
 
 All these procedures are performed in separate files so that users could use them as required and omit certain steps if necessary.  
 
-The single file **dataprocessing.jl** calls all its sub files which do:  
+The single file [dataprocessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl) calls all its sub files which do:  
 Contextual Aggregation - **contextualAggregation.jl**  
 Categorical Arrays definition - **categoricalArrays.jl**  
 Randomisation - **randomisation.jl**  
