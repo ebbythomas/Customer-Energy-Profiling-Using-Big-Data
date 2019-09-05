@@ -9,13 +9,16 @@ This project specifically aims to wring out the best 'n' variables that would co
 
 
 **DATA PROCESSING:**  
-The files associated with data processing is found within the folder 'DataProcessing'.  
-In data processing, we start with a 12083 X 940 raw data, where most of the variables are omitted through manual variable selection.  
-The selected data is processed with a series of statistical procedures such as  
-Contextual Aggregation  
-Categorical Arrays definition  
-Randomisation and  
-Missing value imputation  
+The files associated with data processing are found within the folder 'DataProcessing'.  
+In data processing, we start with a $12,083 \times 940$ raw dataset, where most of the variables are omitted through manual variable selection.  
+
+The selected data is processed with a series of statistical procedures such as:  
+
+* Contextual Aggregation  
+* Categorical Arrays definition  
+*Randomisation and  
+*Missing value imputation  
+
 All these procedures are performed in separate files so that users could use them as required and omit certain steps if necessary.  
 The one single file **dataprocessing.jl** calls all its sub files which does,  
 Contextual Aggregation - **contextualAggregation.jl**  
