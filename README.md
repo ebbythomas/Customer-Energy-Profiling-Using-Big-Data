@@ -1,5 +1,7 @@
 ## Customer-Energy-Profiling-Using-Big-Data
 
+ [Instructions](#instructions) are below.
+
 A comprehensive guide for Power System Engineers to handle big/large datasets available to them so that these datasets provide better interpretability in applications such as demand management, asset management, ancillary services management, electricity market operations as well as with views to increase customer participation in electricity tariffing. Currently, there is a phenomenal amount of data available, however, the tools to convert such data into invaluable insights is lacking in the domain.  
 
 The aim of this project is to improve the utilisation of data in power engineering scenario through data analytic methods. Here, statistical data processing techniques are discussed in a non-programmer perspective.  
@@ -51,7 +53,8 @@ The files within the Data_Files are,
 
 ---
 
-**INSTRUCTIONS FOR USE:**  
+Instructions
+------------
 
 **Data Processing**  
 1. Feed in the raw data, recs2009_public.csv  
