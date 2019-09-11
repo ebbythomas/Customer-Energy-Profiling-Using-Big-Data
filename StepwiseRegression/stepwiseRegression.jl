@@ -20,7 +20,7 @@ trainSetNC3 = copy(trainSet);
 trainSetNC4 = copy(trainSet);
 
 # i=67, for best 1 variables
-for i in 1:5
+for i in 1:67
       pReal= coeftable(model).cols[4];
       pVals=[pReal[i] for i in 1:length(pReal)];  #Aug19Corr--> pReal[i].v
       pMaxVal, pMaxIndex = findmax(pVals); #second value is index
