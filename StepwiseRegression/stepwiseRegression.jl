@@ -84,10 +84,10 @@ end
 
 #rSquaredVal = DataFrame([rSquaredZero;rSquared])
 rSquaredVal = DataFrame(rSquared)
-CSV.write("rSquaredVal1.csv",rSquaredVal)
+CSV.write("rSquaredVal.csv",rSquaredVal)
 #stdErrValDat = DataFrame([stdErrValZero;stdErrVal])
 stdErrValDat = DataFrame(stdErrVal)
-CSV.write("stdDevValStepWise1.csv",stdErrValDat)
+CSV.write("stdDevValStepWise.csv",stdErrValDat)
 
 
 actualEnergyValidSet =Array(validSet[:KWH])
