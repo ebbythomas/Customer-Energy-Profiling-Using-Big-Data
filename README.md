@@ -77,6 +77,9 @@ Instructions
  5. The association between models (variables) are found out using **Group Lasso**.  
  6. While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
 
-**MORE INFORMATION/ ABOUT THE PAPER:**  
+
+
+More Information About the Paper
+------------
 These code are developed as a part of the Paper "Customer Energy Profiling using Julia Lang with Big Data", which is submitted to XXX Journal.  
 The authors request users to cite the paper as well as get back to us if you find any incompatibilities within the codes.
