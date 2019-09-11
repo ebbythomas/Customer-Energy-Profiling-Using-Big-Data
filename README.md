@@ -58,22 +58,24 @@ Instructions
 
 **Data Processing**  
 1. Feed in the raw data, recs2009_public.csv  
-2. Run the file [dataprocessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl). This will call other files on to it.  
+2. Run the file [dataProcessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl). This will call other files on to it.  
 3. At the end of data processing, we will get three files - train set, (**trainSet.csv**) validation set (**validSet.csv**) and test set (**testSet.csv**)  
 4. Note that this code block has been designed so that it is appropriate for use in a general use case. However, contextual aggregation performed in 'contextualAggregation.jl' file is specifically suited for the specific dataset as well as the application. This code block, henceforth will vary widely depending on the dataset encountered as well as the application.  
 
- **Stepwise Regression**  
- 1. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
- 2. Varying values of 'i' for the iteration yields different models with different number of variables.  
- 3. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
- 4. The association between models (variables) are found out using [fishersTest.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/StepwiseRegression/fishersTest.jl), which is called within the file.
+ **Stepwise Regression** 
+ 1. Run the file [stepwiseRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/StepwiseRegression).   
+ 2. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
+ 3. Varying values of 'i' for the iteration yields different models with different number of variables.  
+ 4. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
+ 5. The association between models (variables) are found out using [fishersTest.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/StepwiseRegression/fishersTest.jl), which is called within the file.
  
   **Lasso Regression**  
- 1. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
- 2. We utilise the 'RCall' package in Julia to import R functions directly to Julia.
- 3. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
- 4. The association between models (variables) are found out using **Group Lasso**.  
- 5. While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
+ 1. Run the file [lassoRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/LassoRegression).  
+ 2. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
+ 3. We utilise the 'RCall' package in Julia to import R functions directly to Julia.
+ 4. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
+ 5. The association between models (variables) are found out using **Group Lasso**.  
+ 6. While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
 
 **MORE INFORMATION/ ABOUT THE PAPER:**  
 These code are developed as a part of the Paper "Customer Energy Profiling using Julia Lang with Big Data", which is submitted to XXX Journal.  
