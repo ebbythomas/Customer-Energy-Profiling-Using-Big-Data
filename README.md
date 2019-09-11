@@ -70,7 +70,7 @@ Instructions
  
   **Lasso Regression**  
  1. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
- 2. We utilise the 'RCall' packake in Julia to import R functions directly to Julia.
+ 2. We utilise the 'RCall' package in Julia to import R functions directly to Julia.
  3. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
  4. The association between models (variables) are found out using **Group Lasso**.  
  5. While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
