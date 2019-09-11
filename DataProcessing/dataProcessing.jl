@@ -1,6 +1,6 @@
 using StatsBase, DataFrames, GLM, CSV, Distributions, Random
 
-cd(raw"H:/bigDataPaper/Sep5Codes/DataProcessing")
+#cd(raw"H:/bigDataPaper/Sep5Codes/DataProcessing")        # Change the directory
 df = CSV.read("recs2009_public.csv", header=true, copycols=true);
 
 obs = size(df)[1]
