@@ -23,11 +23,11 @@ The selected data is processed with a series of statistical procedures such as:
 
 All these procedures are performed in separate files so that users could use them as required and omit certain steps if necessary.  
 
-The single file [dataprocessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl) calls all its sub files which do:  
-Contextual Aggregation - [contextualAggregation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/contextualAggregation.jl)  
-Categorical Arrays definition -  [categoricalArrays.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/categoricalArrays.jl)
-Randomisation - [randomisation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/randomisation.jl)
-Missing value imputation - [imputation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/imputation.jl)
+The single file [dataprocessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl) calls all its sub files which do:    
+Contextual Aggregation - [contextualAggregation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/contextualAggregation.jl)    
+Categorical Arrays definition -  [categoricalArrays.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/categoricalArrays.jl)  
+Randomisation - [randomisation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/randomisation.jl)  
+Missing value imputation - [imputation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/imputation.jl)  
 The resulting datasets - train set, validation set and test set are carried on to the two methods of modeling and model selection - Stepwise regression and Lasso.  
 
 **STEPWISE REGRESSION:**  
