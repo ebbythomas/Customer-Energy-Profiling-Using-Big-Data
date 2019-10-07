@@ -21,9 +21,9 @@ The selected data is processed with a series of statistical procedures such as:
 * Missing value imputation  
 
 For contextual Aggregation, the user is required to generate the following files:-  
-1. A CSV file that details all the variable names that need to be selected for the modelling, myColsInclude.csv.  
-2. A CSV file that details all the variable names that are required to be deleted after the contextual aggregation proces. These names are rising from the contextual aggregation process, and NOT all the variables that are not required for the model, myColsDelete.csv.  
-3. A folder of CSV files that details the Dictionary or the Mapping of all the variables (if required) that are included in the model, contextAggCSVs. Files are required only for variables that require mapping, and not for every single variable.  
+1. A CSV file that details all the variable names that need to be selected for the modelling, [myColsInclude.csv](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/myColsInclude.csv).  
+2. A CSV file that details all the variable names that are required to be deleted after the contextual aggregation proces. These names are rising from the contextual aggregation process, and NOT all the variables that are not required for the model, [myColsDelete.csv](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/myColsDelete.csv).  
+3. A folder of CSV files that details the Dictionary or the Mapping of all the variables (if required) that are included in the model, [contextAggCSVs](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/DataProcessing/contextAggCSVs). Files are required only for variables that require mapping, and not for every single variable.  
 The generation of the above mentioned CSV files are possibly the only data and user specific inputs to the functions. We have taken care to automate the rest of the process, thereby giving a generic method for data processing as well as modelling.
 
 
@@ -42,7 +42,7 @@ The stepwiseRegression fits the model, as well as predicts the observations base
 
 **LASSO REGRESSION:**  
 The files associated with stepwise regressoon are found within the folder 'LassoRegression'.  
-The file [lassoRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/LassoRegression/lassoRegression.jl) executes the lasso regression taking in the lambda values given in the CSV file lambdaVals.csv.  
+The file [lassoRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/LassoRegression/lassoRegression.jl) executes the lasso regression taking in the lambda values given in the CSV file [lambdaVals.csv] (https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/LassoRegression/lambdaVals.csv).  
 Here as well, we identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables, but though Lasso, one of the recent developments in statistics for model selection.  
 To obtain the associations between variables including the categorical variables, we utilse the package **Group Lasso** within Lasso.  
 The lassoRegression fits the model, as well as predict the observations based on a specific validation set based on the fit model.
@@ -62,25 +62,23 @@ Instructions
 ------------
 
 **Data Processing**  
-1. Feed in the raw data, recs2009_public.csv  
-2. Run the file [dataProcessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl). This will call other files on to it.  
-3. At the end of data processing, we will get three files - train set, (**trainSet.csv**) validation set (**validSet.csv**) and test set (**testSet.csv**)  
-4. Note that this code block has been designed so that it is appropriate for use in a general use case. However, contextual aggregation performed in 'contextualAggregation.jl' file is specifically suited for the specific dataset as well as the application. This code block, henceforth will vary widely depending on the dataset encountered as well as the application.  
+1. Run the file [dataProcessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl). This will feed in the raw data [recs2009_public](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataSets/recs2009_public.7z),  as well as call all other data processing functions 
+2. At the end of data processing, we will get three files - train set, (**train.csv**) validation set (**valid.csv**) and test set (**test.csv**)  
+3. Note that this code block has been designed so that it is appropriate for use in a general use case. However, contextual aggregation performed in 'contextAgg.jl' file is specifically suited for the specific dataset as well as the application. This code block, henceforth will vary widely depending on the dataset encountered as well as the application.  
 
  **Stepwise Regression** 
- 1. Run the file [stepwiseRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/StepwiseRegression).   
+ 1. Run the file [stepReg](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/StepwiseRegression).   
  2. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
  3. Varying values of 'i' for the iteration yields different models with different number of variables.  
  4. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
  5. The association between models (variables) are found out using [fishersTest.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/StepwiseRegression/fishersTest.jl), which is called within the file.
  
   **Lasso Regression**  
- 1. Run the file [lassoRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/LassoRegression).  
+ 1. Run the file [lassoRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/tree/master/LassoRegression). This will import the pre-determined lambda values from the file [lambdaVals.csv](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/LassoRegression/lambdaVals.csv).   
  2. At the start of stepwise regression, we import train, validation and test sets obtained at the end of data prcessing.  
- 3. We utilise the 'RCall' package in Julia to import R functions directly to Julia.
- 4. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
- 5. The association between models (variables) are found out using **Group Lasso**.  
- 6. While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
+  3. After complete iteration so that only the most significant one variable remains in the model, we proceed towards the graph to obtain the knee point. Then the loop has to be initiated again to obtain the best variables identified at the knee point.  
+ 4. The association between models (variables) are found out using **Group Lasso**.  
+ 5. While using RCall, remember to install the packages "gglasso" and "dplyr" at the first run.
 
 
 
