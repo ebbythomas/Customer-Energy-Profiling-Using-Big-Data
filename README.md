@@ -17,27 +17,32 @@ In data processing, we start with a 12,083 x 940 raw dataset, where most of the 
 The selected data is processed with a series of statistical procedures such as:  
 
 * Contextual Aggregation  
-* Categorical Arrays definition  
 * Randomisation and  
 * Missing value imputation  
 
-All these procedures are performed in separate files so that users could use them as required and omit certain steps if necessary.  
+For contextual Aggregation, the user is required to generate the following files:-  
+1. A CSV file that details all the variable names that need to be selected for the modelling, myColsInclude.csv.  
+2. A CSV file that details all the variable names that are required to be deleted after the contextual aggregation proces. These names are rising from the contextual aggregation process, and NOT all the variables that are not required for the model, myColsDelete.csv.  
+3. A folder of CSV files that details the Dictionary or the Mapping of all the variables (if required) that are included in the model, contextAggCSVs. Files are required only for variables that require mapping, and not for every single variable.  
+The generation of the above mentioned CSV files are possibly the only data and user specific inputs to the functions. We have taken care to automate the rest of the process, thereby giving a generic method for data processing as well as modelling.
 
-The single file [dataprocessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl) calls all its sub files which do:    
-Contextual Aggregation - [contextualAggregation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/contextualAggregation.jl)    
-Categorical Arrays definition -  [categoricalArrays.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/categoricalArrays.jl)  
+
+The single file [dataProcessing.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/dataProcessing.jl) calls all its functions which perform:    
+Contextual Aggregation - [contextAgg.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/contextualAggregation.jl)   
 Randomisation - [randomisation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/randomisation.jl)  
 Missing value imputation - [imputation.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/DataProcessing/imputation.jl)  
 The resulting datasets - train set, validation set and test set are carried on to the two methods of modeling and model selection - Stepwise regression and Lasso.  
 
 **STEPWISE REGRESSION:**  
 The files associated with stepwise regressoon are found within the folder 'StepwiseRegression'.  
+Run the file [stepReg.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/StepwiseRegression/stepReg.jl) 
 Here, we identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables though Stepwise Regression, one of the classic methods of statistics for model selection.  
 To obtain the associations between variables, we perform Fishers Exact Test - realised here in the Julia file [fishersTest.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/StepwiseRegression/fishersTest.jl).  
 The stepwiseRegression fits the model, as well as predicts the observations based on a specific validation set based on the fit model.
 
 **LASSO REGRESSION:**  
 The files associated with stepwise regressoon are found within the folder 'LassoRegression'.  
+The file [lassoRegression.jl](https://github.com/ebbythomas/Customer-Energy-Profiling-Using-Big-Data/blob/master/LassoRegression/lassoRegression.jl) executes the lasso regression taking in the lambda values given in the CSV file lambdaVals.csv.  
 Here as well, we identify the best 'n' variables that contribute to the customer energy consumption and predict the energy consumption based on these variables, but though Lasso, one of the recent developments in statistics for model selection.  
 To obtain the associations between variables including the categorical variables, we utilse the package **Group Lasso** within Lasso.  
 The lassoRegression fits the model, as well as predict the observations based on a specific validation set based on the fit model.
