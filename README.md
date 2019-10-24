@@ -84,5 +84,5 @@ Instructions
 
 More Information About the Paper
 ------------
-These code are developed as a part of the Paper "Customer Energy Profiling using Julia Lang with Big Data", which is submitted to XXX Journal.  
+These code are developed as a part of the Paper "Customer Energy Profiling using Julia Lang with Big Data", which soon will be submitted to the journal IEEE Transacrions in Big Data.  
 The authors request users to cite the paper as well as get back to us if you find any incompatibilities within the codes.
